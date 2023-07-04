@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53EFF09B2A544A4C0097ABA5 /* ScanInputSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF09A2A544A4C0097ABA5 /* ScanInputSample.swift */; };
 		BF338FA1182042AC004B691B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF338FA0182042AC004B691B /* CoreFoundation.framework */; };
-		BF338FA4182042AC004B691B /* ScanInputSample.c in Sources */ = {isa = PBXBuildFile; fileRef = BF338FA3182042AC004B691B /* ScanInputSample.c */; };
 		BF338FAD18204959004B691B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF338FAC18204959004B691B /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,11 +25,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		53EFF09A2A544A4C0097ABA5 /* ScanInputSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanInputSample.swift; sourceTree = "<group>"; };
 		68B3EFB6235F51F50001AC2A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7465550013226B30E22E3FF8 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		BF338F9D182042AC004B691B /* ScratchKeyboardIO */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ScratchKeyboardIO; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF338FA0182042AC004B691B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		BF338FA3182042AC004B691B /* ScanInputSample.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ScanInputSample.c; sourceTree = "<group>"; };
 		BF338FAC18204959004B691B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -77,7 +77,7 @@
 		BF338FA2182042AC004B691B /* ScanInputSample */ = {
 			isa = PBXGroup;
 			children = (
-				BF338FA3182042AC004B691B /* ScanInputSample.c */,
+				53EFF09A2A544A4C0097ABA5 /* ScanInputSample.swift */,
 			);
 			path = ScanInputSample;
 			sourceTree = "<group>";
@@ -120,6 +120,7 @@
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					BF338F9C182042AC004B691B = {
+						LastSwiftMigration = 1430;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -147,7 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF338FA4182042AC004B691B /* ScanInputSample.c in Sources */,
+				53EFF09B2A544A4C0097ABA5 /* ScanInputSample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,12 +229,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7465550013226B30E22E3FF8 /* SampleCode.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -241,12 +246,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7465550013226B30E22E3FF8 /* SampleCode.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
